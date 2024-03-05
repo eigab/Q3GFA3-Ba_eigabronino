@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RNG</title>
+  <script>
+    function generateRandomNumber() {
+      var randomNum = Math.random() * 1001;
+      document.getElementById("rannum").innerHTML = "Randomly generated number: " + Math.floor(randomNum);
+      
+      var hundreds = Math.floor(randomNum / 100);
+      var tens = Math.floor((randomNum % 100) / 10);
+      var ones = Math.floor(randomNum % 10);
+
+      document.getElementById("bd").innerHTML = "Breakdown: " + (hundreds * 100) + ", " + (tens * 10) + ", " + ones;
+      document.getElementById("date").innerHTML = "Current date: " + new Date().toISOString().slice(0,10);
+    }
+  </script>
+</head>
+<body>
+  <button onclick="generateRandomNumber()">Generate Random Number</button>
+  <p id="rannum"></p>
+  <p id="bd"></p>
+  <p id="date"></p>
+</body>
+</html>
